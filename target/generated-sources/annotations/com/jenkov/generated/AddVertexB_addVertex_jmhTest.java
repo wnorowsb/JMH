@@ -32,8 +32,8 @@ import org.openjdk.jmh.results.ScalarResult;
 import org.openjdk.jmh.results.AggregationPolicy;
 import org.openjdk.jmh.runner.FailureAssistException;
 
-import com.jenkov.generated.MyBenchmark_jmhType;
-public final class MyBenchmark_testMethod_jmhTest {
+import com.jenkov.generated.AddVertexB_jmhType;
+public final class AddVertexB_addVertex_jmhTest {
 
     boolean p000, p001, p002, p003, p004, p005, p006, p007, p008, p009, p010, p011, p012, p013, p014, p015;
     boolean p016, p017, p018, p019, p020, p021, p022, p023, p024, p025, p026, p027, p028, p029, p030, p031;
@@ -58,7 +58,7 @@ public final class MyBenchmark_testMethod_jmhTest {
     Blackhole blackhole;
     Control notifyControl;
 
-    public BenchmarkTaskResult testMethod_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult addVertex_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -68,24 +68,24 @@ public final class MyBenchmark_testMethod_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            MyBenchmark_jmhType l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control);
+            AddVertexB_jmhType l_addvertexb0_0 = _jmh_tryInit_f_addvertexb0_0(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                blackhole.consume(l_mybenchmark0_0.testMethod());
+                l_addvertexb0_0.addVertex();
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            testMethod_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_mybenchmark0_0);
+            addVertex_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_addvertexb0_0);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    blackhole.consume(l_mybenchmark0_0.testMethod());
+                    l_addvertexb0_0.addVertex();
                     res.allOps++;
                 }
                 control.preTearDown();
@@ -94,7 +94,7 @@ public final class MyBenchmark_testMethod_jmhTest {
             }
 
             if (control.isLastIteration()) {
-                f_mybenchmark0_0 = null;
+                f_addvertexb0_0 = null;
             }
             res.allOps += res.measuredOps;
             int batchSize = iterationParams.getBatchSize();
@@ -104,19 +104,19 @@ public final class MyBenchmark_testMethod_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult(res.allOps, res.measuredOps);
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "testMethod", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "addVertex", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testMethod_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, MyBenchmark_jmhType l_mybenchmark0_0) throws Throwable {
+    public static void addVertex_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, AddVertexB_jmhType l_addvertexb0_0) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            blackhole.consume(l_mybenchmark0_0.testMethod());
+            l_addvertexb0_0.addVertex();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -125,7 +125,7 @@ public final class MyBenchmark_testMethod_jmhTest {
     }
 
 
-    public BenchmarkTaskResult testMethod_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult addVertex_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -135,24 +135,24 @@ public final class MyBenchmark_testMethod_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            MyBenchmark_jmhType l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control);
+            AddVertexB_jmhType l_addvertexb0_0 = _jmh_tryInit_f_addvertexb0_0(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                blackhole.consume(l_mybenchmark0_0.testMethod());
+                l_addvertexb0_0.addVertex();
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            testMethod_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_mybenchmark0_0);
+            addVertex_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_addvertexb0_0);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    blackhole.consume(l_mybenchmark0_0.testMethod());
+                    l_addvertexb0_0.addVertex();
                     res.allOps++;
                 }
                 control.preTearDown();
@@ -161,7 +161,7 @@ public final class MyBenchmark_testMethod_jmhTest {
             }
 
             if (control.isLastIteration()) {
-                f_mybenchmark0_0 = null;
+                f_addvertexb0_0 = null;
             }
             res.allOps += res.measuredOps;
             int batchSize = iterationParams.getBatchSize();
@@ -171,19 +171,19 @@ public final class MyBenchmark_testMethod_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult(res.allOps, res.measuredOps);
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "testMethod", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "addVertex", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testMethod_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, MyBenchmark_jmhType l_mybenchmark0_0) throws Throwable {
+    public static void addVertex_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, AddVertexB_jmhType l_addvertexb0_0) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            blackhole.consume(l_mybenchmark0_0.testMethod());
+            l_addvertexb0_0.addVertex();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -192,7 +192,7 @@ public final class MyBenchmark_testMethod_jmhTest {
     }
 
 
-    public BenchmarkTaskResult testMethod_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult addVertex_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -202,14 +202,14 @@ public final class MyBenchmark_testMethod_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            MyBenchmark_jmhType l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control);
+            AddVertexB_jmhType l_addvertexb0_0 = _jmh_tryInit_f_addvertexb0_0(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                blackhole.consume(l_mybenchmark0_0.testMethod());
+                l_addvertexb0_0.addVertex();
                 res.allOps++;
             }
 
@@ -218,12 +218,12 @@ public final class MyBenchmark_testMethod_jmhTest {
             int batchSize = iterationParams.getBatchSize();
             int opsPerInv = benchmarkParams.getOpsPerInvocation();
             SampleBuffer buffer = new SampleBuffer();
-            testMethod_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_mybenchmark0_0);
+            addVertex_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_addvertexb0_0);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    blackhole.consume(l_mybenchmark0_0.testMethod());
+                    l_addvertexb0_0.addVertex();
                     res.allOps++;
                 }
                 control.preTearDown();
@@ -232,21 +232,21 @@ public final class MyBenchmark_testMethod_jmhTest {
             }
 
             if (control.isLastIteration()) {
-                f_mybenchmark0_0 = null;
+                f_addvertexb0_0 = null;
             }
             res.allOps += res.measuredOps * batchSize;
             res.allOps *= opsPerInv;
             res.allOps /= batchSize;
             res.measuredOps *= opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult(res.allOps, res.measuredOps);
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "testMethod", buffer, benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "addVertex", buffer, benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testMethod_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, MyBenchmark_jmhType l_mybenchmark0_0) throws Throwable {
+    public static void addVertex_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, AddVertexB_jmhType l_addvertexb0_0) throws Throwable {
         long realTime = 0;
         long operations = 0;
         int rnd = (int)System.nanoTime();
@@ -261,7 +261,7 @@ public final class MyBenchmark_testMethod_jmhTest {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                blackhole.consume(l_mybenchmark0_0.testMethod());
+                l_addvertexb0_0.addVertex();
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -279,7 +279,7 @@ public final class MyBenchmark_testMethod_jmhTest {
     }
 
 
-    public BenchmarkTaskResult testMethod_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult addVertex_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -288,7 +288,7 @@ public final class MyBenchmark_testMethod_jmhTest {
             this.blackhole = new Blackhole("Today's password is swordfish. I understand instantiating Blackholes directly is dangerous.");
         }
         if (threadParams.getSubgroupIndex() == 0) {
-            MyBenchmark_jmhType l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control);
+            AddVertexB_jmhType l_addvertexb0_0 = _jmh_tryInit_f_addvertexb0_0(control);
 
             control.preSetup();
 
@@ -296,42 +296,42 @@ public final class MyBenchmark_testMethod_jmhTest {
             notifyControl.startMeasurement = true;
             RawResults res = new RawResults();
             int batchSize = iterationParams.getBatchSize();
-            testMethod_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_mybenchmark0_0);
+            addVertex_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_addvertexb0_0);
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_mybenchmark0_0 = null;
+                f_addvertexb0_0 = null;
             }
             int opsPerInv = control.benchmarkParams.getOpsPerInvocation();
             long totalOps = opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult(totalOps, totalOps);
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "testMethod", res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "addVertex", res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testMethod_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, MyBenchmark_jmhType l_mybenchmark0_0) throws Throwable {
+    public static void addVertex_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, AddVertexB_jmhType l_addvertexb0_0) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            blackhole.consume(l_mybenchmark0_0.testMethod());
+            l_addvertexb0_0.addVertex();
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
     }
 
     
-    MyBenchmark_jmhType f_mybenchmark0_0;
+    AddVertexB_jmhType f_addvertexb0_0;
     
-    MyBenchmark_jmhType _jmh_tryInit_f_mybenchmark0_0(InfraControl control) throws Throwable {
+    AddVertexB_jmhType _jmh_tryInit_f_addvertexb0_0(InfraControl control) throws Throwable {
         if (control.isFailing) throw new FailureAssistException();
-        MyBenchmark_jmhType val = f_mybenchmark0_0;
+        AddVertexB_jmhType val = f_addvertexb0_0;
         if (val == null) {
-            val = new MyBenchmark_jmhType();
-            f_mybenchmark0_0 = val;
+            val = new AddVertexB_jmhType();
+            f_addvertexb0_0 = val;
         }
         return val;
     }

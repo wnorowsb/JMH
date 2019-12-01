@@ -1,2 +1,2 @@
-JMH S 22 com.jenkov.MyBenchmark S 51 com.jenkov.generated.MyBenchmark_testMethod_jmhTest S 10 testMethod S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 21 com.jenkov.AddVertexB S 49 com.jenkov.generated.AddVertexB_addVertex_jmhTest S 9 addVertex S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
 JMH S 19 com.jenkov.Dijkstra S 47 com.jenkov.generated.Dijkstra_calculate_jmhTest S 9 calculate S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
